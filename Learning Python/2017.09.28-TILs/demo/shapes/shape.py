@@ -1,11 +1,13 @@
 """Shape class."""
 
+import point
+
 class Shape():
     """Models an abstract shape."""
 
-    def __init__(self, **kwargs):
+    def __init__(self, x, y, z):
         """Shape constructor."""
-        self._center = (kwargs.get('center_x', 0), kwargs.get('center_y', 0))
+        self._center = point.Point(x, y, z)
 
     @property
     def center(self):
