@@ -20,3 +20,11 @@ class Sphere(Shape):
     def radius(self, value):
         """Setter for self._radius."""
         self._radius = value
+
+    def get_volume(self):
+        """Calculates sphere volume."""
+        return (4.0/3.0)*math.pi*math.pow(self.radius, 3)
+
+    def get_area(self):
+        """Calculates sphere surface area."""
+        return 4*math.pi*math.pow(self.radius, 2)
