@@ -1,9 +1,11 @@
 """Circle class."""
 
-class Circle():
+from shape import Shape
+
+class Circle(Shape):
     """Models a circle shape."""
 
     def __init__(self, **kwargs):
+        
+        super(Circle, self).__init__(kwargs)
         self._radius = kwargs.get('radius', 1)
-        self._center_x = kwargs.get('center_x', 0)
-        self._center_y = kwargs.get('center_y', 0)
