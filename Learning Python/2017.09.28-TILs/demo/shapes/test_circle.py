@@ -1,6 +1,6 @@
 """Unit tests for the Circle class."""
 
-from shapes import circle
+import circle
 
 def test_circle__init__():
     """Tests the constructor."""
