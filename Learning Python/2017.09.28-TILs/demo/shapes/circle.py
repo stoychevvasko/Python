@@ -1,5 +1,6 @@
 """Circle class."""
 
+import math
 from shape import Shape
 
 class Circle(Shape):
@@ -19,3 +20,7 @@ class Circle(Shape):
     def radius(self, value):
         """Setter for self._radius."""
         self._radius = value
+
+    def get_surface(self):
+        """Calculates surface area."""
+        return math.pi * self.radius * self.radius
