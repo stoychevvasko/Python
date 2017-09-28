@@ -24,3 +24,7 @@ class Circle(Shape):
     def get_surface(self):
         """Calculates surface area."""
         return math.pi * self.radius * self.radius
+
+    def get_perimeter(self):
+        """Calculates perimeter length."""
+        return math.pi * self.radius * 2
