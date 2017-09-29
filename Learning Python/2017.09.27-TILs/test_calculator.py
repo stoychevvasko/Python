@@ -12,31 +12,38 @@
 import calculator
 #each file is a module by default in Python
 
-def test_calculator__init__():
+import pytest
+
+@pytest.fixture
+def calc():
+    """Generates a calculator instance."""
+    return calculator.Calculator()
+
+# pylint:disable=redefined-outer-name
+def test_calculator__init__(calc):
     """Tests the constructor."""
-    calc = calculator.Calculator()
     assert calc is not None
     assert isinstance(calc, calculator.Calculator), 'invalid type exception was raised!'
 
-def test_calculator_add():
+# pylint:disable=redefined-outer-name
+def test_calculator_add(calc):
     """Tests addition."""
-    calc = calculator.Calculator()
     assert calc.add(2.5, 2.5) == 5
     assert calc.add(2.5, 2.5, 5) == 10
 
-def test_calculator_subtract():
+# pylint:disable=redefined-outer-name
+def test_calculator_subtract(calc):
     """Tests subtraction."""
-    calc = calculator.Calculator()
     assert calc.subtract(10, 5) == 5
 
-def test_calculator_multiply():
+# pylint:disable=redefined-outer-name
+def test_calculator_multiply(calc):
     """Tests multiplication."""
-    calc = calculator.Calculator()
     assert calc.multiply(3, 5) == 15
     assert calc.multiply(3, 5, 4) == 60
 
-def test_calculator_divide():
+# pylint:disable=redefined-outer-name
+def test_calculator_divide(calc):
     """Tests division."""
-    calc = calculator.Calculator()
     assert calc.divide(50, 10) == 5
     assert calc.divide(18, -3) == -6

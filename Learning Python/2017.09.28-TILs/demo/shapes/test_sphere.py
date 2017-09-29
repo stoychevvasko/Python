@@ -22,16 +22,16 @@ def test_sphere__init__():
     assert sphe.center.z_coord == 3
     assert sphe.radius == 42
 
+# pylint:disable=redefined-outer-name
 def test_sphere_get_volume(sph_sm, sph_bg):
     """Tests get_volume() method."""
     assert sph_sm.get_volume() > 0
     assert sph_bg.get_volume() > 0
     assert sph_sm.get_volume() < sph_bg.get_volume()
 
+# pylint:disable=redefined-outer-name
 def test_sphere_get_area(sph_sm, sph_bg):
     """Test get_area() method."""
     assert sph_sm.get_area() > 0
     assert sph_bg.get_area() > 0
     assert sph_sm.get_area() < sph_bg.get_area()
-
-#TODO fix 'redifining name from outer scope'

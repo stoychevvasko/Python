@@ -22,12 +22,14 @@ def test_circle__init__():
     assert circ.center.z_coord == 3
     assert circ.radius == 42
 
+# pylint:disable=redefined-outer-name
 def test_circle_get_surface(circ_sm, circ_bg):
     """Tests get_surface() method."""
     assert circ_sm.get_surface() > 0
     assert circ_bg.get_surface() > 0
     assert circ_sm.get_surface() < circ_bg.get_surface()
 
+# pylint:disable=redefined-outer-name
 def test_circle_get_perimeter(circ_sm, circ_bg):
     """Tests get_perimeter() method."""
     assert circ_sm.get_perimeter() > 0
