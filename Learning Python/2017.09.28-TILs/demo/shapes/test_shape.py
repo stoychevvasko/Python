@@ -1,18 +1,25 @@
 """Unit tests for the Shape class."""
 
-import shape
+from shape import Shape
+# pylint:disable=unused-import
+from test_fixtures import shape_zero, shape_1_2_3
 
-def test_shape__init__():
+# pylint:disable=redefined-outer-name
+def test_shape__init__(shape_zero):
     """Tests constructor."""
-    shp = shape.Shape(0, 0, 0)
-    assert shp is not None
-    assert isinstance(shp, shape.Shape), 'invalid type exception was raised!'
+    assert shape_zero is not None
+    assert isinstance(shape_zero, Shape), 'invalid type exception was raised!'
 
-def test_shape_init_w_center():
+# pylint:disable=redefined-outer-name
+def test_shape_init_w_center(shape_1_2_3):
     """Tests constructor with parameters."""
-    shp = shape.Shape(1, 2, 3)
-    assert shp is not None
-    assert isinstance(shp, shape.Shape), 'invalid type exception was raised!'
-    assert shp.center.x_coord == 1
-    assert shp.center.y_coord == 2
-    assert shp.center.z_coord == 3
+    assert shape_1_2_3 is not None
+    assert isinstance(shape_1_2_3, Shape), 'invalid type exception was raised!'
+    assert shape_1_2_3.center.x_coord == 1
+    assert shape_1_2_3.center.y_coord == 2
+    assert shape_1_2_3.center.z_coord == 3
+
+# pylint:disable=redefined-outer-name
+def test_get_distance_to_origin(shape_1_2_3):
+    """Tests get_distance_to_origin() method."""
+    assert shape_1_2_3.get_distance_to_origin() > 0

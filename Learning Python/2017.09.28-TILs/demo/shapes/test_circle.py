@@ -1,26 +1,30 @@
 """Unit tests for the Circle class."""
 
-import circle
-import pytest
+from circle import Circle
+# pylint:disable=unused-import
+from test_fixtures import circ_sm, circ_bg
 
-@pytest.fixture
-def circ_sm():
-    """Generates a small circle."""
-    return circle.Circle(0, 0, 0, 1)
-
-@pytest.fixture
-def circ_bg():
-    """Generates a small circle."""
-    return circle.Circle(0, 0, 0, 2)
-
-def test_circle__init__():
+# pylint:disable=redefined-outer-name
+def test_circle__init__(circ_sm, circ_bg):
     """Tests the constructor."""
-    circ = circle.Circle(1, 2, 3, 42)
+    circ = Circle(1, 2, 3, 42)
     assert circ is not None
     assert circ.center.x_coord == 1
     assert circ.center.y_coord == 2
     assert circ.center.z_coord == 3
     assert circ.radius == 42
+
+    assert circ_sm is not None
+    assert circ_sm.center.x_coord == 0
+    assert circ_sm.center.y_coord == 0
+    assert circ_sm.center.z_coord == 0
+    assert circ_sm.radius == 1
+
+    assert circ_bg is not None
+    assert circ_bg.center.x_coord == 0
+    assert circ_bg.center.y_coord == 0
+    assert circ_bg.center.z_coord == 0
+    assert circ_bg.radius == 2
 
 # pylint:disable=redefined-outer-name
 def test_circle_get_surface(circ_sm, circ_bg):

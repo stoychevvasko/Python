@@ -5,9 +5,9 @@ class Point(object):
 
     def __init__(self, x, y, z):
         """Initializes a new Point instance."""
-        self.__x = int(x)
-        self.__y = int(y)
-        self.__z = int(z)
+        self.__x = float(x)
+        self.__y = float(y)
+        self.__z = float(z)
 
     @property
     def x_coord(self):

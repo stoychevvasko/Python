@@ -1,13 +1,13 @@
 """Shape class."""
 
-import point
+from point import Point
 
 class Shape():
     """Models an abstract shape."""
 
     def __init__(self, x, y, z):
         """Shape constructor."""
-        self._center = point.Point(x, y, z)
+        self._center = Point(x, y, z)
 
     @property
     def center(self):
@@ -18,3 +18,7 @@ class Shape():
     def center(self, value):
         """Setter for self._center"""
         self._center = value
+
+    def get_distance_to_origin(self):
+        """Calculates distance from center to origin point of coordinate system."""
+        return 0
