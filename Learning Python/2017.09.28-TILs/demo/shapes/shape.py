@@ -1,5 +1,6 @@
 """Shape class."""
 
+import math
 from point import Point
 
 class Shape():
@@ -21,4 +22,7 @@ class Shape():
 
     def get_distance_to_origin(self):
         """Calculates distance from center to origin point of coordinate system."""
-        return 0
+        return math.sqrt(
+            math.pow(self.center.x_coord, 2)
+            + math.pow(self.center.y_coord, 2)
+            + math.pow(self.center.z_coord, 2))
