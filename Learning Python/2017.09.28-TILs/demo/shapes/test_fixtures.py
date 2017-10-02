@@ -1,6 +1,7 @@
 """Test fixtures."""
 
 from circle import Circle
+from line import Line
 from point import Point
 from round import Round
 from shape import Shape
@@ -37,6 +38,14 @@ def point_invalid():
         return Point('invalid_x', 'invalid_y', 'invalid_z')
     except:
         print('<<<invalid point!>>> PointError ..')
+
+### Line class. ###
+@pytest.fixture
+def line_1():
+    """Generates line ab where a=[0,0,0] and b=[1,2,3]."""
+    point_a = Point(0, 0, 0)
+    point_b = Point(1, 2, 3)
+    return Line(point_a, point_b)
 
 ### Round class. ###
 @pytest.fixture

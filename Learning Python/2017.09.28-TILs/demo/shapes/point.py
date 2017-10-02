@@ -1,5 +1,7 @@
 """Point class."""
 
+import math
+
 class Point(object):
     """Models a point in 3D space."""
 
@@ -38,3 +40,10 @@ class Point(object):
     def z_coord(self, value):
         """Setter for self.__z."""
         self.__z = value
+
+    def get_distance(self, other):
+        """Gets the distance between the current point and another."""
+        return math.sqrt(
+            math.pow(other.x_coord-self.x_coord, 2) +
+            math.pow(other.y_coord-self.y_coord, 2) +
+            math.pow(other.z_coord-self.z_coord, 2))
