@@ -2,7 +2,9 @@
 
 from circle import Circle
 from point import Point
+from round import Round
 from shape import Shape
+from sphere import Sphere
 import pytest
 
 ### Shape class. ###
@@ -36,6 +38,17 @@ def point_invalid():
     except:
         print('<<<invalid point!>>> PointError ..')
 
+### Round class. ###
+@pytest.fixture
+def round_sm():
+    """Generates a small round."""
+    return Round(0, 0, 0, 1)
+
+@pytest.fixture
+def round_bg():
+    """Generates a bigger round."""
+    return Round(0, 0, 0, 2)
+
 ### Circle class. ###
 @pytest.fixture
 def circ_sm():
@@ -44,5 +57,16 @@ def circ_sm():
 
 @pytest.fixture
 def circ_bg():
-    """Generates a small circle."""
+    """Generates a bigger circle."""
     return Circle(0, 0, 0, 2)
+
+### Sphere class. ###
+@pytest.fixture
+def sphere_sm():
+    """Generates a small sphere."""
+    return Sphere(0, 0, 0, 1)
+
+@pytest.fixture
+def sphere_bg():
+    """Generates a bigger sphere."""
+    return Sphere(0, 0, 0, 2)

@@ -1,25 +1,14 @@
 """Sphere class."""
 
 import math
-from shape import Shape
+from round import Round
 
-class Sphere(Shape):
+class Sphere(Round):
     """Models a sphere shape."""
 
     def __init__(self, x, y, z, r):
         """Initialzes a new Sphere instance."""
-        super(Sphere, self).__init__(x, y, z)
-        self._radius = r
-
-    @property
-    def radius(self):
-        """Getter for self._radius."""
-        return self._radius
-
-    @radius.setter
-    def radius(self, value):
-        """Setter for self._radius."""
-        self._radius = value
+        super(Sphere, self).__init__(x, y, z, r)
 
     def get_volume(self):
         """Calculates sphere volume."""
