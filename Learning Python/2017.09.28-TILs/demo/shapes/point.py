@@ -47,3 +47,14 @@ class Point(object):
             math.pow(other.x_coord-self.x_coord, 2) +
             math.pow(other.y_coord-self.y_coord, 2) +
             math.pow(other.z_coord-self.z_coord, 2))
+
+    def get_projection(self, option):
+        """Gets the projectection of this point onto selected axis."""
+        if option == 'x':
+            return Point(0, self.y_coord, self.z_coord)
+        elif option == 'y':
+            return Point(self.x_coord, 0, self.z_coord)
+        elif option == 'z':
+            return Point(self.x_coord, self.y_coord, 0)
+        else:
+            raise ValueError("invalid axis/dimension - must be 'z', 'z' or 'z'")
