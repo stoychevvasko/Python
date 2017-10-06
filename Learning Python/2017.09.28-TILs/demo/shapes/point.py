@@ -57,4 +57,4 @@ class Point(object):
         elif option == 'z':
             return Point(self.x_coord, self.y_coord, 0)
         else:
-            raise ValueError("invalid axis/dimension - must be 'z', 'z' or 'z'")
+            raise ValueError("invalid axis/dimension - must be 'x', 'y' or 'z'")
