@@ -1,7 +1,7 @@
 ![alt text](https://github.com/stoychevvasko/Python/blob/master/.resources/python-logo.png "Python Logo")**Python**
 TILs
 
-To export dependencies requirements, run this script as administrator:
+To export required dependencies, run this script as administrator:
 ```shell
 pip freeze > requirements.txt
 ```
@@ -19,5 +19,5 @@ Scripts/activate.bat
 
 To run code tests and linter, run this script through the terminal:
 ```shell
-clear && py.test -v --color=yes && pylint -d locally-disabled *.py
+clear && py.test -v --color=yes && pylint -d locally-disabled -r n *.py
 ```
