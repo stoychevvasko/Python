@@ -1,4 +1,4 @@
-"""Data Structures and Algorithms in Python - Goodritch, M. et al., page 51"""
+"""Data Structures and Algorithms in Python - Goodrich, M. et al., page 51"""
 
 from random import randrange
 
