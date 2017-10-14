@@ -1,5 +1,6 @@
 """Test fixtures."""
 
+from cone import Cone
 from circle import Circle
 from line import Line
 from point import Point
@@ -79,3 +80,13 @@ def sphere_sm():
 def sphere_bg():
     """Generates a bigger sphere."""
     return Sphere(0, 0, 0, 2)
+
+@pytest.fixture
+def cone_sm():
+    """Generates a small cone."""
+    return Cone(point_zero(), 1, point_1_2_3())
+
+@pytest.fixture
+def cone_bg():
+    """Generates a bigger cone."""
+    return Cone(point_zero(), 2, point_1_2_3())
