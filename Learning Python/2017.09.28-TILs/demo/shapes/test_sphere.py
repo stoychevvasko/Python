@@ -1,5 +1,6 @@
 """Unit tests for the Sphere class."""
 
+from point import Point
 from sphere import Sphere
 # pylint:disable=unused-import
 from test_fixtures import sphere_sm, sphere_bg
@@ -26,7 +27,12 @@ class TestSphere(object):
 
     # pylint:disable=redefined-outer-name
     def test_sphere_get_area(self, sphere_sm, sphere_bg):
-        """Test get_area() method."""
+        """Tests get_area() method."""
         assert sphere_sm.get_area() > 0
         assert sphere_bg.get_area() > 0
         assert sphere_sm.get_area() < sphere_bg.get_area()
+
+    # pylint:disable=redefined-outer-name
+    def test_sphere_get_center(self, sphere_sm):
+        """Tests the get_center() method."""
+        assert isinstance(sphere_sm.get_center(), Point)

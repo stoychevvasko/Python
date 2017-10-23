@@ -17,3 +17,7 @@ class Sphere(Round):
     def get_area(self):
         """Calculates sphere surface area."""
         return 4*math.pi*math.pow(self.radius, 2)
+
+    def get_center(self):
+        """Returns the center of the sphere as Point object."""
+        return self.center

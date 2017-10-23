@@ -10,9 +10,16 @@ class Cone(Shape):
 
     def __init__(self, c_base, r_radius, apex):
         """Initializes a new Cone instance."""
-        c_x = c_base.x_coord
-        c_y = c_base.y_coord
-        c_z = c_base.z_coord
-        super(Cone, self).__init__(c_x, c_y, c_z)
+        super(Cone, self).__init__(c_base.x_coord, c_base.y_coord, c_base.z_coord)
         self._apex = Point(apex.x_coord, apex.y_coord, apex.z_coord)
-        self._base = Circle(c_x, c_y, c_z, r_radius)
+        self.base = Circle(c_base.x_coord, c_base.y_coord, c_base.z_coord, r_radius)
+
+        @property
+        def base(self):
+            """Getter for self._base."""
+            return self._base
+
+        @base.setter
+        def base(self, value):
+            """Setter for self._base."""
+            self._base = value
