@@ -1,7 +1,7 @@
 """Unit tests for creativity exercises."""
 
 from creativity import reverse_list, check_for_odd_product, check_for_distinct, \
-    create_list_like_seq, produce_alphabet, my_shuffle
+    create_list_like_seq, produce_alphabet, my_shuffle, array_multiply
 
 def test_reverse_list():
     """C-1.13."""
@@ -37,3 +37,10 @@ def test_my_shuffle():
     """C-1.20."""
     test_data = ['a', 'b', 'c', 'd', 'e']
     assert ['a', 'b', 'c', 'd', 'e'] != my_shuffle(test_data)
+
+def test_array_multiply():
+    """C-1.22."""
+    test_a = [1, 3, 5]
+    test_b = [2, 4, 6]
+    expected = [2, 12, 30]
+    assert expected == array_multiply(test_a, test_b)
