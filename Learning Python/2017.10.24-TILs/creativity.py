@@ -48,11 +48,14 @@ def remove_punctuation(sentence):
 
 def factors(num):
     """Generator that computes factors."""
-    k = 1
-    while k * k < num: # while k < sqrt(n)
+#     k = 1
+#     while k * k < num: # while k < sqrt(n)
+#         if num % k == 0:
+#             yield k
+#             yield num // k
+#         k += 1
+#     if k * k == num:
+#         yield k
+    for k in range(1, num + 1):
         if num % k == 0:
             yield k
-            yield num // k            
-        k += 1
-    if k * k == num: # special case if n is perfect square
-        yield k

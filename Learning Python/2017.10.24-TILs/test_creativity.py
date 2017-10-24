@@ -30,5 +30,5 @@ def test_factors():
     test_value = 100
     expected = [1, 2, 4, 5, 10, 20, 25, 50, 100]
     actual = list(factors(test_value))
-    actual.sort()
+    # actual.sort()
     assert actual == expected
