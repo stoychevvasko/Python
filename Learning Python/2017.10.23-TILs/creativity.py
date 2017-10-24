@@ -87,3 +87,5 @@ def array_multiply(one, another):
     for index, item in enumerate(one):
         result.append(item * another[index])
     return result
+
+
