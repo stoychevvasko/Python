@@ -1,6 +1,7 @@
 """Unit tests for creativity exercises."""
 
-from creativity import list_out_of_bounds, count_vowels, remove_punctuation
+from creativity import list_out_of_bounds, count_vowels, remove_punctuation, \
+    factors
 import pytest
 
 def test_list_out_of_bounds():
@@ -23,3 +24,11 @@ def test_remove_punctuation():
     test_sentence = "Let's try, Mike."
     expected = "Lets try Mike"
     assert remove_punctuation(test_sentence) == expected
+
+def test_factors():
+    """C-1.27."""
+    test_value = 100
+    expected = [1, 2, 4, 5, 10, 20, 25, 50, 100]
+    actual = list(factors(test_value))
+    actual.sort()
+    assert actual == expected
