@@ -6,7 +6,7 @@ from point import Point
 class Line(Shape):
     """Models a line."""
 
-    def __init__(self, start, end):
+    def __init__(self, start: Point, end: Point):
         """Initializes a new instance of the Line class."""
         super(Line, self).__init__(
             (start.x_coord + end.x_coord)/2.0,
@@ -16,25 +16,25 @@ class Line(Shape):
         self._end = Point(end.x_coord, end.y_coord, end.z_coord)
 
     @property
-    def start(self):
+    def start(self) -> Point:
         """Getter for self._start."""
         return self._start
 
     @start.setter
-    def start(self, value):
+    def start(self, value: Point):
         """Setter for self._start."""
         self._start = value
 
     @property
-    def end(self):
+    def end(self) -> Point:
         """Getter for self._end."""
         return self._end
 
     @end.setter
-    def end(self, value):
+    def end(self, value: Point):
         """Setter for self._end."""
         self._end = value
 
-    def get_length(self):
+    def get_length(self) -> float:
         """Returns the length of the line."""
         return self.end.get_distance(self.start)
