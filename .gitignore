@@ -1,4 +1,5 @@
 *.un~
 .cache/
+.coverage
 __pycache__/
 VIRTUAL/

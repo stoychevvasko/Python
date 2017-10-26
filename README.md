@@ -17,7 +17,7 @@ virtualenv VIRTUAL
 Scripts/activate.bat
 ```
 
-To run code tests and linter, run this script through the terminal:
+To run code tests, pytest-cov and linter, run this script through the terminal:
 ```shell
-clear && py.test -v --color=yes && pylint -d locally-disabled -r n *.py
+clear && py.test -v --cov --color=yes && pylint -d locally-disabled -r n *.py
 ```
