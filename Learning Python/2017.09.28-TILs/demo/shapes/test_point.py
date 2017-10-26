@@ -12,13 +12,13 @@ class TestPoint(object):
     # pylint:disable=redefined-outer-name
     def test_point__init__(self, point_zero, point_1_2_3, point_invalid):
         """Tests constructor."""
-        assert isinstance(point_zero, Point), 'invalid type exception was raised!'
+        assert isinstance(point_zero, Point)
         assert point_zero.x_coord == 0
         assert point_zero.y_coord == 0
         assert point_zero.z_coord == 0
 
         assert point_1_2_3 is not None
-        assert isinstance(point_1_2_3, Point), 'invalid type exception was raised!'
+        assert isinstance(point_1_2_3, Point)
         assert point_1_2_3.x_coord == 1
         assert point_1_2_3.y_coord == 2
         assert point_1_2_3.z_coord == 3
@@ -55,3 +55,42 @@ class TestPoint(object):
         assert point_1_2_3.get_projection('z').x_coord == 1
         assert point_1_2_3.get_projection('z').y_coord == 2
         assert point_1_2_3.get_projection('z').z_coord == 0
+
+        with pytest.raises(ValueError):
+            point_1_2_3.get_projection('invalid')
+
+    def test_x_coord_get(self, point_1_2_3):
+        """Tests the x_coord getter."""
+        assert point_1_2_3.x_coord is not None
+        assert point_1_2_3.x_coord == 1
+
+    def test_x_coord_set(self, point_1_2_3):
+        """Tests the x_coord setter."""
+        test_point = point_1_2_3
+        test_point.x_coord = 15
+        assert test_point.x_coord is not None
+        assert test_point.x_coord == 15
+
+    def test_y_coord_get(self, point_1_2_3):
+        """Tests the y_coord getter."""
+        assert point_1_2_3.y_coord is not None
+        assert point_1_2_3.y_coord == 2
+
+    def test_y_coord_set(self, point_1_2_3):
+        """Tests the y_coord setter."""
+        test_point = point_1_2_3
+        test_point.y_coord = 15
+        assert test_point.y_coord is not None
+        assert test_point.y_coord == 15
+
+    def test_z_coord_get(self, point_1_2_3):
+        """Tests the z_coord getter."""
+        assert point_1_2_3.z_coord is not None
+        assert point_1_2_3.z_coord == 3
+
+    def test_z_coord_setter(self, point_1_2_3):
+        """Tests the z_coord setter."""
+        test_point = point_1_2_3
+        test_point.z_coord = 15
+        assert test_point.z_coord is not None
+        assert test_point.z_coord == 15
