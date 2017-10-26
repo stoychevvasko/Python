@@ -1,8 +1,9 @@
 """Unit tests for the Shape class."""
 
+from point import Point
 from shape import Shape
 # pylint:disable=unused-import
-from test_fixtures import shape_zero, shape_1_2_3
+from test_fixtures import shape_zero, shape_1_2_3, point_1_2_3
 
 # pylint:disable=no-self-use
 class TestShape(object):
@@ -13,6 +14,20 @@ class TestShape(object):
         """Tests constructor."""
         assert shape_zero is not None
         assert isinstance(shape_zero, Shape), 'invalid type exception was raised!'
+
+    def test_shape_center_get(self, shape_zero, shape_1_2_3):
+        """Tests the center getter."""
+        assert shape_zero.center is not None
+        assert shape_1_2_3.center is not None
+        assert isinstance(shape_zero.center, Point)
+        assert isinstance(shape_1_2_3.center, Point)
+
+    def test_shape_center_set(self, shape_zero, point_1_2_3):
+        """Tests the center setter."""
+        test_shape = shape_zero
+        test_shape.center = point_1_2_3
+        assert test_shape.center is not None
+        assert isinstance(test_shape.center, Point)
 
     # pylint:disable=redefined-outer-name
     def test_shape_init_w_center(self, shape_1_2_3):
