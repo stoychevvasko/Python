@@ -17,3 +17,8 @@ class Circle(Round):
     def get_perimeter(self) -> float:
         """Calculates perimeter length."""
         return math.pi * self.radius * 2
+
+    def __str__(self) -> str:
+        """Returns a string representation of this circle instance."""
+        return 'circle(c:(' + str(self.center.x_coord) + ', ' + str(self.center.y_coord) \
+            + ', ' + str(self.center.z_coord) + '), r:' + str(self.radius) + ')'

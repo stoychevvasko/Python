@@ -43,3 +43,12 @@ class TestCircle(object):
         assert circ_sm.get_perimeter() > 0
         assert circ_bg.get_perimeter() > 0
         assert circ_sm.get_perimeter() < circ_bg.get_perimeter()
+
+    def test_circle__str__(self, circ_sm, circ_bg):
+        """Tests the __str__() overload method."""
+        expected_sm = 'circle(c:(0.0, 0.0, 0.0), r:1)'
+        assert circ_sm.__str__() == expected_sm
+        assert str(circ_sm) == expected_sm
+        expected_bg = 'circle(c:(0.0, 0.0, 0.0), r:2)'
+        assert circ_bg.__str__() == expected_bg
+        assert str(circ_bg) == expected_bg
