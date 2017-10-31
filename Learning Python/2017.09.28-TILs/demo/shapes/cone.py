@@ -36,3 +36,7 @@ class Cone(Shape):
     def get_volume(self) -> float:
         """Returns cone volume."""
         return (1.0/3.0)*self.base.get_surface()*Point.get_distance(self.base.center, self.apex)
+
+    def __str__(self) -> str:
+        """Returns the current Cone instance as str value."""
+        return 'cone(base: ' + str(self.base) + ', apex: ' + str(self.apex) + ')'

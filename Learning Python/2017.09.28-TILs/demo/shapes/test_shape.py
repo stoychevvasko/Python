@@ -42,3 +42,9 @@ class TestShape(object):
     def test_get_distance_to_origin(self, shape_1_2_3):
         """Tests get_distance_to_origin() method."""
         assert shape_1_2_3.get_distance_to_origin() > 0
+
+    def test_shape__str__(self, shape_1_2_3):
+        """Tests the self.__str__() overload method."""
+        expected = 'Shape(Point(x: 1.0, y: 2.0, z: 3.0))'
+        assert shape_1_2_3.__str__() == expected
+        assert str(shape_1_2_3) == expected

@@ -46,9 +46,9 @@ class TestCircle(object):
 
     def test_circle__str__(self, circ_sm, circ_bg):
         """Tests the __str__() overload method."""
-        expected_sm = 'circle(c:(0.0, 0.0, 0.0), r:1)'
+        expected_sm = 'circle(c: Point(x: 0.0, y: 0.0, z: 0.0), r:1)'
         assert circ_sm.__str__() == expected_sm
         assert str(circ_sm) == expected_sm
-        expected_bg = 'circle(c:(0.0, 0.0, 0.0), r:2)'
+        expected_bg = 'circle(c: Point(x: 0.0, y: 0.0, z: 0.0), r:2)'
         assert circ_bg.__str__() == expected_bg
         assert str(circ_bg) == expected_bg

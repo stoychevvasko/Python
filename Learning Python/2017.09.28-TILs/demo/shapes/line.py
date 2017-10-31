@@ -38,3 +38,8 @@ class Line(Shape):
     def get_length(self) -> float:
         """Returns the length of the line."""
         return self.end.get_distance(self.start)
+
+    def __str__(self) -> str:
+        """Returns the current Line instance as a str value."""
+        return 'line(start: ' + str(self.start) + ', end: ' + \
+            str(self.end) + ')'

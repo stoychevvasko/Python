@@ -58,3 +58,8 @@ class Point(object):
             return Point(self.x_coord, self.y_coord, 0)
         else:
             raise ValueError("invalid axis/dimension - must be 'x', 'y' or 'z'")
+
+    def __str__(self) -> str:
+        """Returns the current Point instance as str value."""
+        return 'Point(x: ' + str(self.x_coord) + ', y: ' + str(self.y_coord) + \
+            ', z: ' + str(self.z_coord) + ')'

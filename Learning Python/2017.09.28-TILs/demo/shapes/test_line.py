@@ -49,3 +49,10 @@ class TestLine(object):
         test_line.end = point_1_2_3
         assert test_line.end is not None
         assert isinstance(test_line.end, Point)
+
+    def test_line__str__(self, line_1):
+        """Tests the self.__str__() overload method."""
+        expected = 'line(start: Point(x: 0.0, y: 0.0, z: 0.0), ' + \
+            'end: Point(x: 1.0, y: 2.0, z: 3.0))'
+        assert line_1.__str__() == expected
+        assert str(line_1) == expected

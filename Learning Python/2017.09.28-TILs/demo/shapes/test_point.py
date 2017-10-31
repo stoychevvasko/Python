@@ -94,3 +94,12 @@ class TestPoint(object):
         test_point.z_coord = 15
         assert test_point.z_coord is not None
         assert test_point.z_coord == 15
+
+    def test_point__str__(self, point_zero, point_1_2_3):
+        "Tests the __str__() overload method."""
+        expected_zero = 'Point(x: 0.0, y: 0.0, z: 0.0)'
+        assert point_zero.__str__() == expected_zero
+        assert str(point_zero) == expected_zero
+        expected_1_2_3 = 'Point(x: 1.0, y: 2.0, z: 3.0)'
+        assert point_1_2_3.__str__() == expected_1_2_3
+        assert str(point_1_2_3) == expected_1_2_3

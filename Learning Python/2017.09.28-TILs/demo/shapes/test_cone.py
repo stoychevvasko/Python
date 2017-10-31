@@ -57,3 +57,14 @@ class TestCone(object):
         """Tests the get_volume() method."""
         assert cone_sm.get_volume() > 0
         assert cone_bg.get_volume() > 0
+
+    def test_cone__str__(self, cone_sm, cone_bg):
+        """Tests the cone.__str__() overload method."""
+        expected_sm = 'cone(base: circle(c: Point(x: 0.0, y: 0.0, z: 0.0), r:1), ' + \
+            'apex: Point(x: 1.0, y: 2.0, z: 3.0))'
+        assert cone_sm.__str__() == expected_sm
+        assert str(cone_sm) == expected_sm
+        expected_bg = 'cone(base: circle(c: Point(x: 0.0, y: 0.0, z: 0.0), r:2), ' + \
+            'apex: Point(x: 1.0, y: 2.0, z: 3.0))'
+        assert cone_bg.__str__() == expected_bg
+        assert str(cone_bg) == expected_bg

@@ -22,3 +22,8 @@ class Sphere(Round):
     def get_center(self) -> Point:
         """Returns the center of the sphere as Point object."""
         return self.center
+
+    def __str__(self) -> str:
+        """Returns this Sphere instance as a str value."""
+        return 'sphere(c:' + str(self.center) + ', r:' + \
+            str(self.radius) + ')'

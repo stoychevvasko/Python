@@ -36,3 +36,12 @@ class TestSphere(object):
     def test_sphere_get_center(self, sphere_sm):
         """Tests the get_center() method."""
         assert isinstance(sphere_sm.get_center(), Point)
+
+    def test_sphere__str__(self, sphere_sm, sphere_bg):
+        """Tests the self.__str__() ovrload method."""
+        expected_sm = 'sphere(c:Point(x: 0.0, y: 0.0, z: 0.0), r:1)'
+        assert sphere_sm.__str__() == expected_sm
+        assert str(sphere_sm) == expected_sm
+        expected_bg = 'sphere(c:Point(x: 0.0, y: 0.0, z: 0.0), r:2)'
+        assert sphere_bg.__str__() == expected_bg
+        assert str(sphere_bg) == expected_bg

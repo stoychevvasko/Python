@@ -19,3 +19,7 @@ class Round(Shape):
     def radius(self, value: float):
         """Setter for self._radius."""
         self._radius = value
+
+    def __str__(self) -> str:
+        """Returns this Round instance as a str value."""
+        return 'Round(c: ' + str(self.center) + ', r:' + str(self.radius) + ')'

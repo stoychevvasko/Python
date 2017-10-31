@@ -20,5 +20,4 @@ class Circle(Round):
 
     def __str__(self) -> str:
         """Returns a string representation of this circle instance."""
-        return 'circle(c:(' + str(self.center.x_coord) + ', ' + str(self.center.y_coord) \
-            + ', ' + str(self.center.z_coord) + '), r:' + str(self.radius) + ')'
+        return 'circle(c: ' + str(self.center) + ', r:' + str(self.radius) + ')'
