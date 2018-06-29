@@ -19,5 +19,5 @@ Scripts/activate.bat
 
 To run code tests, pytest-cov and linter, run this script through the terminal:
 ```shell
-clear && py.test -v --cov --color=yes && pylint -d locally-disabled -r n *.py
+clear && py.test -vvvvv --cov --color=yes && pylint -d locally-disabled -r n *.py
 ```
